@@ -1,0 +1,51 @@
+{
+	"folders": [
+		{
+			"name": "/website",
+			"path": "website"
+		},		
+		{
+			"name": "/infrastructure",
+			"path": "infrastructure"
+		},
+		{
+			"name": "/",
+			"path": "."
+		}
+	],
+	"settings": {
+		"go.testEnvFile": "${workspaceFolder}/.env",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		},
+		"eslint.validate": [
+			"typescript",
+			"typescriptreact"
+		],
+		"workbench.colorTheme": "Monokai",
+		"search.exclude": {
+			"**/dist": true,
+			"**/package-lock.json": true
+		},
+		"files.watcherExclude": {
+			"**/.git/objects/**": true,
+			"**/.git/subtree-cache/**": true,
+			"**/dist": true,
+			"**/coverage": true,
+			"**/storybook-static": true
+		},
+		"files.associations": {
+			"*.hcl": "terraform",
+		},
+		"jest.autoRun": {}
+	},
+	"extensions": {
+		"recommendations": [
+			"dbaeumer.vscode-eslint",
+			"knisterpeter.vscode-commitizen",
+			"hashicorp.terraform",
+			"golang.go",
+			"bierner.markdown-mermaid"
+		]
+	}
+}
