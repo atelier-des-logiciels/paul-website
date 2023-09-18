@@ -13,8 +13,9 @@
         "terminal.integrated.defaultProfile.linux": "zsh"
       },
       "extensions": [
-        "bierner.markdown-mermaid"
-      ]
+		"bierner.markdown-mermaid",
+		"esbenp.prettier-vscode"
+	]
     }
   },
   "postCreateCommand": "/opt/devcontainer/install.sh",

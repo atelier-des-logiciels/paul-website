@@ -1,7 +1,10 @@
 import { StrictMode } from 'react';
 import * as ReactDOMClient from 'react-dom/client';
-
 import { BrowserRouter } from 'react-router-dom';
+
+import App from './App';
+
+import "./main.css";
 
 function start() {
   const rootElement = document.getElementById('app-root')!;
@@ -11,7 +14,7 @@ function start() {
   root.render(
     <StrictMode>
       <BrowserRouter>
-        <div>Hello</div>
+        <App />
       </BrowserRouter>
     </StrictMode>
   );

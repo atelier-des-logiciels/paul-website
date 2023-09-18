@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { DefinePlugin } = require('webpack');
 
-
 module.exports = {
   entry: './src/index.tsx',
   output: {
@@ -51,7 +50,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
         generator: {
           filename: 'styles/[hash][ext][query]',
         },
