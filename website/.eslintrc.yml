@@ -1,0 +1,2 @@
+extends:
+  - ../../../config/typescript/.eslintrc.react.yml

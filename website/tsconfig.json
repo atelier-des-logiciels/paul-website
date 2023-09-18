@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES5",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "downlevelIteration": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "declaration": true,
+    "strict": true,
+    "declarationMap": true,
+    "noEmitOnError": true,
+    "types": [
+      "jest",
+      "node"
+    ],
+    "noEmit": false,
+    "lib": [
+      "es2021",
+      "dom"
+    ],
+    "rootDir": ".",
+    "baseUrl": "./src/",
+    "outDir": "./dist",
+    "composite": true,
+    "jsx": "react-jsx",
+  },
+  "include": [
+    "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.json",
+    "src/**/*.svg"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+}
