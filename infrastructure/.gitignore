@@ -1,0 +1,11 @@
+.env*
+
+.terragrunt-cache
+.test-data
+.terraform*
+terraform.tfstate*
+
+.*kubeconfig*
+# Devenv
+.devenv*
+devenv.local.nix
