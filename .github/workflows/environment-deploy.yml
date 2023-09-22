@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  tests:
+  deploy:
     timeout-minutes: 60  
     defaults:
       run:
