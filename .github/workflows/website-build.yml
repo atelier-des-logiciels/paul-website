@@ -8,6 +8,14 @@ on:
       - "website/**"
       - .github/workflows/website-build.yml
 
+env:
+  KUBE_HOST: ${{ vars.KUBE_HOST }}
+  K8S_NAMESPACE: paul
+  K8S_DEPLOYMENT: website
+  KUBE_CLUSTER_CA_CERT_PEM: ${{ secrets.KUBE_CLUSTER_CA_CERT_PEM }} 
+  KUBE_CLIENT_KEY_PEM: ${{ secrets.KUBE_CLIENT_KEY_PEM }}
+  KUBE_CLIENT_CERT_PEM: ${{ secrets.KUBE_CLIENT_CERT_PEM }}  
+
 jobs:
   test:
     timeout-minutes: 60
@@ -48,3 +56,20 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - name: Restart website
+        run: |
+          echo "${{ env.KUBE_CLUSTER_CA_CERT_PEM }}" > ${{ github.workspace }}/ca.pem
+          echo "${{ env.KUBE_CLIENT_KEY_PEM }}" > ${{ github.workspace }}/key.pem
+          echo "${{ env.KUBE_CLIENT_CERT_PEM }}" > ${{ github.workspace }}/cert.pem
+          kubectl config set-cluster default \
+            --server=${{ vars.KUBE_HOST }} \
+            --certificate-authority=${{ github.workspace }}/ca.pem
+          kubectl config set-credentials cluster-admin \
+            --client-key=${{ github.workspace }}/key.pem \
+            --client-certificate=${{ github.workspace }}/cert.pem
+          kubectl config set-context default \
+            --cluster=default \
+            --namespace=${{ env.K8S_NAMESPACE }} \
+            --user=cluster-admin
+          kubectl config use-context default
+          kubectl rollout restart deployment ${{ env.K8S_DEPLOYMENT }}           
