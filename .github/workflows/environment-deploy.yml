@@ -22,7 +22,6 @@ jobs:
           terragrunt_version: 0.51.3
       - name: Install terratest log parser
         run: ./install_linux_terratest_log_parser.sh          
-      - run: make test-install
       - uses: terraform-linters/setup-tflint@v2
         name: Setup TFLint
         with:
