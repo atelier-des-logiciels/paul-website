@@ -31,7 +31,7 @@ jobs:
         env:
           TF_IN_AUTOMATION: 1
           ENVIRONMENT: paul-website
-          KUBE_HOST: ${{ secrets.KUBE_HOST }}
+          KUBE_HOST: ${{ vars.KUBE_HOST }}
           KUBE_CLIENT_CERT_DATA: ${{ secrets.KUBE_CLIENT_CERT_PEM }}
           KUBE_CLIENT_KEY_DATA: ${{ secrets.KUBE_CLIENT_KEY_PEM }}
           KUBE_CLUSTER_CA_CERT_DATA: ${{secrets.KUBE_CLUSTER_CA_CERT_PEM }}          
