@@ -8,16 +8,8 @@ on:
       - "website/**"
       - .github/workflows/website-build.yml
 
-env:
-  KUBE_HOST: ${{ vars.KUBE_HOST }}
-  K8S_NAMESPACE: paul
-  K8S_DEPLOYMENT: website
-  KUBE_CLUSTER_CA_CERT_PEM: ${{ secrets.KUBE_CLUSTER_CA_CERT_PEM }} 
-  KUBE_CLIENT_KEY_PEM: ${{ secrets.KUBE_CLIENT_KEY_PEM }}
-  KUBE_CLIENT_CERT_PEM: ${{ secrets.KUBE_CLIENT_CERT_PEM }}  
-
 jobs:
-  test:
+  build:
     timeout-minutes: 60
     defaults:
       run:
@@ -56,6 +48,21 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+  deploy:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    needs: build      
+
+    env:
+      KUBE_HOST: ${{ vars.KUBE_HOST }}
+      K8S_NAMESPACE: paul
+      K8S_DEPLOYMENT: website
+      KUBE_CLUSTER_CA_CERT_PEM: ${{ secrets.KUBE_CLUSTER_CA_CERT_PEM }} 
+      KUBE_CLIENT_KEY_PEM: ${{ secrets.KUBE_CLIENT_KEY_PEM }}
+      KUBE_CLIENT_CERT_PEM: ${{ secrets.KUBE_CLIENT_CERT_PEM }}  
+
+    steps:
       - name: Restart website
         run: |
           echo "${{ env.KUBE_CLUSTER_CA_CERT_PEM }}" > ${{ github.workspace }}/ca.pem
