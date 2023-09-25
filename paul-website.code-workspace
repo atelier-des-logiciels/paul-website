@@ -36,8 +36,12 @@
 		},
 		"files.associations": {
 			"*.hcl": "terraform",
+			"*.css": "tailwindcss"
 		},
-		"jest.autoRun": {}
+		"jest.autoRun": {},
+		"xml.fileAssociations": [
+			
+		]
 	},
 	"extensions": {
 		"recommendations": [
