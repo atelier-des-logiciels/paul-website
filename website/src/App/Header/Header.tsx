@@ -3,7 +3,8 @@ import menuIcon from './images/menu.svg';
 
 export default function Header() {
   return (
-    <div className="sticky p-6 text-white bg-primary-900">
+    <div className="sticky p-6 text-white bg-primary-900 border-b-primary-600 border-b-2 ">
+      {/* before:absolute before:content-[''] before:border-b-2 before:-bottom-2 before:border-b-primary-400 before:w-full */}
       <div className="flex -mt-2 absolute">
         <img src={logo} alt="logo" className="w-10 h-10" />
         <div className="text-2xl font-semibold tracking-wide self-center ml-5 hidden lg:block">
