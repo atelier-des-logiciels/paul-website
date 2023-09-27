@@ -1,2 +1,44 @@
+parser: "@typescript-eslint/parser"
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+  project: ./tsconfig.json
+env:
+  browser: true
+  es2021: true
 extends:
-  - ../../../config/typescript/.eslintrc.react.yml
+  - eslint:recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:@typescript-eslint/recommended-requiring-type-checking
+  - airbnb
+  - airbnb/hooks
+  - airbnb-typescript
+  - plugin:prettier/recommended
+rules:
+  react/jsx-props-no-spreading: off
+  react/react-in-jsx-scope: off
+  "@typescript-eslint/ban-ts-comment": off
+  no-void: off
+  no-plusplus: off
+  import/no-extraneous-dependencies:
+    - error
+    - devDependencies: ["src/mocks/**/*.ts"]
+  no-restricted-imports:
+    - warn
+    - name: "@mui/material"
+      message: "Please use \"import foo from '@mui/material/foo'\" instead."
+settings:
+  import/resolver:
+    node:
+      paths: ["src"]
+
+overrides:
+  - files: ["*.spec.ts", "*.spec.tsx"]
+    env:
+      jest: true
+    rules:
+      import/no-extraneous-dependencies: off
+  - files: ["*.stories.tsx"]
+    rules:
+      import/no-extraneous-dependencies: off
+      react/jsx-props-no-spreading: off

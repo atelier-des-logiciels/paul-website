@@ -24,10 +24,10 @@ function Footer() {
         <div className="flex flex-col gap-4">
           <h3 className="font-bold">Navigation</h3>
           <div className="flex gap-2 flex-col">
-          <a href="/services">Mes services</a>
-          <a href="/values">Mes valeurs</a>
-          <a href="/clients">Mes clients</a>
-          <a href="/cv">Mon parcours</a>
+            <a href="/services">Mes services</a>
+            <a href="/values">Mes valeurs</a>
+            <a href="/clients">Mes clients</a>
+            <a href="/cv">Mon parcours</a>
           </div>
         </div>
       </div>
