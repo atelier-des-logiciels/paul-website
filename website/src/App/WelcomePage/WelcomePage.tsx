@@ -1,6 +1,6 @@
 export default function WelcomePage() {
   return (
-    <div className="text-center py-32 lg:py-72 w-full lg:pb-16">
+    <div className="text-center pt-32 pb-8 lg:py-72 w-full lg:pb-16">
       <h1 className="text-6xl lg:text-8xl font-semibold mb-12">
         Consultant DevOps
       </h1>

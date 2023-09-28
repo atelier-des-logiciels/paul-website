@@ -9,7 +9,7 @@ import dappy from './images/dappy.png';
 
 function Clients() {
   return (
-    <div className="flex flex-col pb-24 pt-12">
+    <div className="flex flex-col pb-24 pt-4 md:pt-12">
       <h3 className="text-center text-2xl font-semibold pb-12">Mes clients</h3>
       <div className="flex items-center w-5/6 flex-wrap self-center justify-center gap-12">
         <a
