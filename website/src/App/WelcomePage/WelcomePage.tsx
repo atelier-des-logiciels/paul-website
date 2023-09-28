@@ -15,7 +15,7 @@ export default function WelcomePage() {
           href="/services"
           className="border-2 rounded-full p-4 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white"
         >
-          mes services
+          Mes services
         </a>
         <a
           href="#contact"
