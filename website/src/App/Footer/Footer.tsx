@@ -7,10 +7,6 @@ function Footer() {
             Contactez-moi
           </h3>
           <div>
-            <p>10 rue Peyresourde</p>
-            <p>31880 La Salvetat Saint Gilles</p>
-          </div>
-          <div>
             <p>Téléphone:</p>
             <a href="tel:0613281158">06 13 28 11 58</a>
           </div>
