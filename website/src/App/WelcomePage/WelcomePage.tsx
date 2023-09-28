@@ -1,7 +1,7 @@
 export default function WelcomePage() {
   return (
     <div className="text-center py-32 lg:py-72 w-full lg:pb-16">
-      <h1 className="text-4xl md:text-4xl lg:text-8xl font-semibold mb-12">
+      <h1 className="text-6xl lg:text-8xl font-semibold mb-12">
         Consultant DevOps
       </h1>
       <h2 className="text-xl lg:text-2xl mb-4">
@@ -21,7 +21,7 @@ export default function WelcomePage() {
           href="#contact"
           className="p-4 border-primary-600 text-primary-600 hover:underline underline-offset-8"
         >
-          Discutons ensemble
+          Contactez-moi
         </a>
       </div>
     </div>
