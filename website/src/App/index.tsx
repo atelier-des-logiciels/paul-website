@@ -1,6 +1,7 @@
 import Clients from './Clients';
 import Footer from './Footer';
 import Header from './Header';
+import MyValuesSummary from './MyValuesSummary';
 import WelcomePage from './WelcomePage';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <WelcomePage />
       <Clients />
+      <MyValuesSummary />
       <Footer />
     </div>
   );
