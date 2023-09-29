@@ -11,7 +11,7 @@ function Clients() {
   return (
     <div className="flex flex-col pb-32 pt-4 md:pt-12">
       <h3 className="text-center text-2xl font-semibold pb-12">
-        Ils ont fait appel à moi
+        Ils ont fait appel à mes services
       </h3>
       <div className="flex items-center w-5/6 flex-wrap self-center justify-center gap-12">
         <a
