@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Footer() {
   return (
     <div className="bg-primary-900 bottom-0 w-full text-white p-6 flex justify-center gap-24">
@@ -20,10 +22,10 @@ function Footer() {
         <div className="flex flex-col gap-4">
           <h3 className="font-bold">Navigation</h3>
           <div className="flex gap-2 flex-col">
-            <a href="/services">Mes services</a>
-            <a href="/values">Mes valeurs</a>
-            <a href="/clients">Mes clients</a>
-            <a href="/cv">Mon parcours</a>
+            <Link to="/services">Mes services</Link>
+            <Link to="/values">Mes valeurs</Link>
+            <Link to="/clients">Mes clients</Link>
+            <Link to="/career">Mon parcours</Link>
           </div>
         </div>
       </div>
